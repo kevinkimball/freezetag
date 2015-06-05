@@ -1,6 +1,6 @@
-module Freezetag
+module FreezeTag
 
-  API_ENDPOINT = 'http://www.freezetag.io/api/v1/tags'
+  API_ENDPOINT = 'https://www.freezetag.io/api/v1/tags'
 
   mattr_accessor :api_key
 

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'freezetag'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2015-06-04'
   s.summary     = ''
   s.description = ''

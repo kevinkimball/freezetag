@@ -20,8 +20,8 @@ module FreezeTag
   module ClassMethods
     def autocomplete(attribute)
       self.freezetag_attribute = attribute
-      before_save :freezetag_deindex_record
       after_save :freezetag_index_record
+      before_destroy :freezetag_deindex_record
     end
   end
 
@@ -32,7 +32,6 @@ module FreezeTag
     end
 
     def freezetag_deindex_record
-      return true if self.id == nil
       body = { type: self.class.name, id: self.id }
       HTTParty.delete(API_ENDPOINT, headers: { 'X-API-Key' => self.freezetag_api_key }, body: body)
     end
